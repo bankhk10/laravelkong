@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
-
+// use App\Models\User;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\DepartmentContoroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $userr = User::all();
+    $userr = DB::table('users')->get();
     return view('dashboard',compact('userr'));
 })->name('dashboard');
+
+Route::get('/departmemt/all',[DepartmentContoroller::class,'index']);
