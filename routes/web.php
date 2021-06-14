@@ -25,4 +25,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('/departmemt/all',[DepartmentContoroller::class,'index'])->name('departmemt');
-Route::post('/departmemt/add',[DepartmentContoroller::class,'store'])->name('adddepartmemt');
+Route::post('/departmemt/add',[DepartmentContoroller::class,'store'])->name('adddepartment');
